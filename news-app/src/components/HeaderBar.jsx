@@ -12,13 +12,13 @@ const HeaderBar = () => (
                     to="/" 
                     className="text-white font-medium hover:text-blue-500 transition-colors no-underline"
                 >
-                 Entertainment
+                 General
                 </Link>
                 <Link 
                     to="/" 
                     className="text-white font-medium hover:text-blue-500 transition-colors no-underline"
                 >
-                    General
+                 Entertainment
                 </Link>
                 <Link 
                     to="/" 

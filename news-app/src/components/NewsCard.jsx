@@ -1,4 +1,3 @@
-// src/components/NewsCard.jsx
 const NewsCard = ({ article, onClick }) => {
     const formattedDate = new Date(article.publishedAt).toLocaleDateString()
   
