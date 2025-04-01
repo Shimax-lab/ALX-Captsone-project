@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import HeaderBar from '../components/HeaderBar';
+import Footer from '../components/Footer';
 
 const ArticleDetails = () => {
   const { title } = useParams();
@@ -30,18 +32,13 @@ const ArticleDetails = () => {
   if (!article) return <div className="p-4">Loading...</div>;
 
   return (
-    <div className="container mx-auto p-4 max-w-2xl">
-      <button
-        onClick={() => navigate(-1)}
-        className="mb-6 text-blue-500 hover:text-blue-700"
-      >
-        ← Back to News
-      </button>
+    <div className="container mx-auto p-2 max-w-full">
+          <HeaderBar/>
 
+      
       <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
       <div className="flex items-center space-x-4 text-gray-500 mb-6">
         <span>{article.source?.name}</span>
-        <span>•</span>
         <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
         {article.author && (
           <>
@@ -54,7 +51,7 @@ const ArticleDetails = () => {
       <img
         src={article.urlToImage || '/placeholder-image.jpg'}
         alt={article.title}
-        className="w-full h-64 object-cover mb-6 rounded-lg"
+        className="w-2/3 object-center h-64 object-cover mb-6 rounded-lg"
       />
 
       <div className="text-gray-700 leading-relaxed mb-6">
@@ -69,6 +66,7 @@ const ArticleDetails = () => {
       >
         Read Full Article
       </a>
+      <Footer/>
     </div>
   );
 };
