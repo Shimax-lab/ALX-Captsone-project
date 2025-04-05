@@ -10,19 +10,19 @@ const HeaderBar = () => (
             <nav className="ml-auto flex gap-8">
                 <Link 
                     to="/" 
-                    className="text-white font-medium hover:text-blue-500 transition-colors no-underline"
+                    className="text-white font-medium hover:text-gray-300 transition-colors no-underline"
                 >
                  General
                 </Link>
                 <Link 
                     to="/" 
-                    className="text-white font-medium hover:text-blue-500 transition-colors no-underline"
+                    className="text-white font-medium hover:text-gray-300 transition-colors no-underline"
                 >
                  Entertainment
                 </Link>
                 <Link 
                     to="/" 
-                    className="text-white font-medium hover:text-blue-500 transition-colors no-underline"
+                    className="text-white font-medium hover:text-gray-300 transition-colors no-underline"
                 >
                     Business
                 </Link>
