@@ -63,7 +63,10 @@ const HomePage = () => {
     <div className="container mx-auto p-2">
       <HeaderBar />
       <SearchBar
-        
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        category={category}
+        setCategory={setCategory}
       />
 
       {loading ? (

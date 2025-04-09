@@ -1,15 +1,17 @@
+import { useNavigate } from 'react-router-dom';
+
 const SearchBar = ({ searchQuery, setSearchQuery, category, setCategory }) => {
+  const navigate = useNavigate();
   const categories = [
     'general', 'business', 'entertainment'
   ];
 
   const handleSearch = () => {
-    const queryParams =new URLSearchParams ({
+    const queryParams = new URLSearchParams({
       query: searchQuery.trim(),
       category: category
     }).toString();
     navigate(`/search?${queryParams}`);
-     
   };
 
   const handleSearchKeyPress = (e) => {
@@ -26,7 +28,7 @@ const SearchBar = ({ searchQuery, setSearchQuery, category, setCategory }) => {
           placeholder="Search news..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          onKeyPress={handleSearchKeyPress} 
+          onKeyPress={handleSearchKeyPress}
           className="w-1/2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
         />
         <button
@@ -43,8 +45,8 @@ const SearchBar = ({ searchQuery, setSearchQuery, category, setCategory }) => {
             key={cat}
             onClick={() => setCategory(cat)}
             className={`px-4 py-2 rounded-full text-sm ${
-              category === cat 
-                ? 'bg-[#55453d] text-white' 
+              category === cat
+                ? 'bg-[#55453d] text-white'
                 : 'bg-[#55453d] text-white hover:bg-gray-300'
             }`}
           >
