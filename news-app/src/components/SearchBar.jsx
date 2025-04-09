@@ -4,7 +4,12 @@ const SearchBar = ({ searchQuery, setSearchQuery, category, setCategory }) => {
   ];
 
   const handleSearch = () => {
-    setSearchQuery(searchQuery.trim()); 
+    const queryParams =new URLSearchParams ({
+      query: searchQuery.trim(),
+      category: category
+    }).toString();
+    navigate(`/search?${queryParams}`);
+     
   };
 
   const handleSearchKeyPress = (e) => {
